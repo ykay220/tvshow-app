@@ -10,6 +10,7 @@ input[type="text"] {
   border: 1px solid grey;
   color: white;
   background: grey;
+  outline: none;
 }
 
 form button {
@@ -81,7 +82,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-
+  cursor: pointer;
   background-color: #86c232;
   border-radius: 0.5rem;
   transition: all 0.2s ease-in-out;
@@ -133,6 +134,29 @@ span {
   font-weight: bold;
   color: white;
   margin-left: 5px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 30%;
+  overflow-y: auto;
+  width: 60%;
+  padding: 40px;
+  background-color: white;
+  z-index: 102;
 }
 
 .selected:hover,

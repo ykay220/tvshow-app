@@ -8,6 +8,7 @@ function App() {
   const [usersearch, updateUsersearch] = useState("");
   const [showsData, updateShowsData] = useState();
   const [displayData, updateDisplayData] = useState();
+  
 
 
   const fetchTvShowsapi = async (string) => {
@@ -16,7 +17,7 @@ function App() {
       const apiData = res.data;
       updateShowsData(apiData);
       updateDisplayData(apiData);
-      console.log(apiData);
+      // console.log(apiData);
     } catch (e) {
       console.log("error ", e)
     }
@@ -119,7 +120,7 @@ function App() {
     <div className="movie-container">
       {displayData ? (
         displayData.map((eachshow) => (
-          <MovieCard eachshow={eachshow} key={eachshow.show.id} />
+          <MovieCard displayData={displayData} eachshow={eachshow} key={eachshow.show.id} />
         ))
       ) : null}
       </div>

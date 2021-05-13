@@ -1,12 +1,32 @@
-import React from 'react'
-import { GoPlus, GoStar } from "react-icons/go";
+import Modal from './Modal'
+import { useState } from 'react'
+
+import {  GoStar } from "react-icons/go";
 
 function Moviecard(props) {
-    const { eachshow } = props;
-    console.log(eachshow)
+    
+    const [isOpen, updateisOpen] = useState(false)
+
+    const openHandler = (id) => {
+        updateisOpen(true)
+       
+
+    }
+
+    const closeHandler = () => {
+        updateisOpen(false)
+    }
+
+    const { eachshow, displayData } = props;
+//    console.log(eachshow)
+    
     return (
-        <div className="movie-card">
-        
+       <>
+        <Modal eachshow={eachshow} isOpen={isOpen} closeHandler={closeHandler}/>
+
+        <div onClick={ openHandler}className="movie-card">
+               
+                   
             <div className="image-container">
                 <img src={eachshow.show.image.medium} alt="" />
             </div>
@@ -27,6 +47,7 @@ function Moviecard(props) {
             
            
         </div>
+        </>
     )
 }
 
