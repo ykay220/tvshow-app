@@ -17,7 +17,7 @@ function Moviecard(props) {
         updateisOpen(false)
     }
 
-    const { eachshow, displayData } = props;
+    const { eachshow, displayData, showsData } = props;
 //    console.log(eachshow)
     
     return (
@@ -26,7 +26,7 @@ function Moviecard(props) {
 
         <div onClick={ openHandler}className="movie-card">
                
-                   
+            
             <div className="image-container">
                 <img src={eachshow.show.image.medium} alt="" />
             </div>

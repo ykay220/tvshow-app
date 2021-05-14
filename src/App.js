@@ -120,7 +120,7 @@ function App() {
     <div className="movie-container">
       {displayData ? (
         displayData.map((eachshow) => (
-          <MovieCard displayData={displayData} eachshow={eachshow} key={eachshow.show.id} />
+          <MovieCard showsData={showsData} displayData={displayData} eachshow={eachshow} key={eachshow.show.id} />
         ))
       ) : null}
       </div>

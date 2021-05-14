@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Open Sans", sans-serif;
 }
 
 input[type="text"] {
@@ -95,7 +96,7 @@ body {
 
 .image-container img {
   width: 100%;
-  height: auto;
+  height: 300px;
   max-height: 300px;
   display: block;
   object-fit: cover;
@@ -151,15 +152,79 @@ span {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 30%;
+
   overflow-y: auto;
-  width: 60%;
-  padding: 40px;
-  background-color: white;
+
+  background-color: #222629;
   z-index: 102;
 }
 
-.selected:hover,
+.modal-content {
+  display: flex;
+}
+
+.modal-text {
+  width: 60%;
+  color: white;
+  padding: 30px 0 0 0;
+  padding-left: 80px;
+  margin-bottom: 30px;
+}
+
+.modal-text h1 {
+  padding-bottom: 10px;
+}
+
+.modal-text span {
+  padding-right: 30px;
+  font-size: 0.9rem;
+}
+
+.modal-text span:nth-of-type(4) {
+  right: 1%;
+  bottom: 3%;
+  border: 1px solid #86c232;
+  border-radius: 50%;
+  padding: 15px;
+}
+
+.modal-text p {
+  padding-top: 30px;
+  width: 90%;
+  overflow-x: auto;
+  padding-bottom: 30px;
+}
+
+.modal-text a {
+  border: 3px solid #86c232;
+  padding: 8px 20px;
+  text-decoration: none;
+  color: #86c232;
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.modal-text a:hover {
+  background-color: #86c232;
+  color: white;
+}
+
+.modal-imagewrap {
+  display: block;
+  width: 30%;
+}
+
+.modal-imagewrap img {
+  height: 100%;
+  width: 100%;
+}
+
+.modal-rating {
+  color: white;
+  position: absolute;
+}
+
+.modal .selected:hover,
 .selected:focus {
   outline: none;
   border: 3px solid #86c232;
