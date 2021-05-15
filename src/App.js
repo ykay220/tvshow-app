@@ -163,6 +163,7 @@ function App() {
       ) : null}
       </div>
       </div>
+      <div className="footer"><p>Yama Karimi</p></div>
     </div>
   );
 }

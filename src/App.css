@@ -10,9 +10,17 @@ input[type="text"] {
   font-size: 17.8px;
   border: 1px solid grey;
   color: white;
-  background: grey;
+  background: rgb(128,128,128,.50);
+  transition: .3s ease-in;
   outline: none;
 }
+
+input[type="text"]:focus {
+ 
+  background: rgb(128,128,128);
+  
+}
+
 
 form button {
   /* width: 20%; */
@@ -58,6 +66,7 @@ body {
 .middle-content {
   border-top: 5px solid white;
   border-bottom: 5px solid white;
+  padding-bottom: 50px;
   margin-top: 120px;
   min-height: 500px;
   background-color: #222629;
@@ -133,11 +142,17 @@ span {
 .selected {
   padding: 8px 8px;
   background-color: grey;
-  border: 3px solid #a8cf70;
+  border: 3px solid #86c232;
   font-weight: bold;
   color: white;
   margin-right: 30px;
   cursor: pointer;
+  transition:.3s ease-in;
+}
+
+.selected:hover{
+  background-color: #86c232;
+  
 }
 
 .featured{
@@ -244,6 +259,14 @@ span {
 .selected:focus {
   outline: none;
   border: 3px solid #86c232;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  font-weight: bold;
+  color: #222629;
 }
 
 @media (min-width: 600px) {
