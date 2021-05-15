@@ -43,7 +43,7 @@ function Moviecard(props) {
                
             
             <div className="image-container">
-            { eachshow.show.image ?.medium ? (<img src={eachshow.show.image.medium}/>)  : (<div className="">'No image available'</div>)  }
+            { eachshow.show.image ?.medium ? (<img src={eachshow.show.image.medium}/>)  : (<img src="https://www.carlscards.com/wp-content/uploads/2020/05/No-Image.jpg"/>)  }
             </div>
            
             <div className="card-info">

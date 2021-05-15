@@ -86,7 +86,7 @@ return finalString
                         }}
                       className="modal-content">
                           <div className="modal-imagewrap">
-                              <img src={eachshow.show.image.medium} alt="" />
+                                { eachshow.show.image ?.medium ? (<img src={eachshow.show.image.medium}/>)  : (<img src="https://www.carlscards.com/wp-content/uploads/2020/05/No-Image.jpg"/>)  }
                           </div>
                           <div className="modal-text">
                               <h1>{eachshow.show.name}</h1>

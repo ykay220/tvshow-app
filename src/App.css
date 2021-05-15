@@ -273,6 +273,15 @@ span {
   color: #222629;
 }
 
+/* .no-image{
+  background-image: url('https://www.carlscards.com/wp-content/uploads/2020/05/No-Image.jpg');
+  height: auto;
+  width: 100%;
+  background-size: cover;
+  background-position: top;
+} */
+
+
 @media (min-width: 600px) {
   .movie-container {
     grid-template-columns: repeat(2, 1fr);
