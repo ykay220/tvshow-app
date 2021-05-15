@@ -2,6 +2,7 @@ import axios from 'axios';
 import MovieCard from './components/Moviecard';
 import { FaSearch } from "react-icons/fa"
 import { useState, useEffect } from 'react';
+import {motion, AnimatePresence} from 'framer-motion'
 import './App.css';
 
 function App() {
@@ -84,15 +85,38 @@ function App() {
       <div className="header-absolute"></div>
           <div className="header-main">
             <div className="header-content">
-                <div className="header-h1">
+                <motion.div
+                  initial={{
+                     x:100,
+                     opacity:0
+                 }}
+                 animate={{
+                     x:0,
+                     opacity:1,
+                     transition: {
+                         delay: 0.1
+                     }
+
+                 }}
+                className="header-h1">
                   <h1>tvDiscovery</h1>
-                </div>
-                <div className="header-form">
+                </motion.div>
+                <motion.div
+                   initial={{
+                    opacity:0
+                }}
+                animate={{
+                    opacity:1,
+                    transition: {
+                        delay: 0.3
+                    }
+                }}
+                className="header-form">
                   <form>
                     <input placeholder="Search..."onChange={search} value={usersearch} type="text" />
                     <button onClick={showsearch} type="submit"><FaSearch/></button>
                   </form>
-                </div>
+                </motion.div>
             </div>
             </div>
 
@@ -101,6 +125,20 @@ function App() {
       {/* <button onClick={mostpopular}>Click here for most popular</button> */}
       {/* <button onClick={newlyreleased}>Click here for new</button> */}
     <div className="middle-content">
+      <motion.div 
+         initial={{
+          x:100,
+          opacity:0
+      }}
+      animate={{
+          x:0,
+          opacity:1,
+          transition: {
+              delay: 0.1
+          }
+
+      }}
+      className="featured"><h2>FEATURED SHOWS</h2></motion.div>
       <div className="select-wrap">
            <select className="selected"onChange={selectRating}>
         <option disabled selected value="">Check Rating</option>

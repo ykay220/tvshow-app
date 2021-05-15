@@ -1,4 +1,5 @@
 import Modal from './Modal'
+import {motion, AnimatePresence} from 'framer-motion'
 import { useState } from 'react'
 
 import {  GoStar } from "react-icons/go";
@@ -24,7 +25,18 @@ function Moviecard(props) {
        <>
         <Modal eachshow={eachshow} isOpen={isOpen} closeHandler={closeHandler}/>
 
-        <div onClick={ openHandler}className="movie-card">
+        <motion.div
+             initial={{
+                opacity:0
+            }}
+            animate={{
+                opacity:1,
+                transition: {
+                    delay: 0.3
+                }
+                
+            }}
+        onClick={ openHandler}className="movie-card">
                
             
             <div className="image-container">
@@ -46,7 +58,7 @@ function Moviecard(props) {
             </div>
             
            
-        </div>
+        </motion.div>
         </>
     )
 }
