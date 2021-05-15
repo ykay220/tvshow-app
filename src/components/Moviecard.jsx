@@ -21,6 +21,9 @@ function Moviecard(props) {
     const { eachshow, displayData, showsData } = props;
 //    console.log(eachshow)
     
+
+
+
     return (
        <>
         <Modal eachshow={eachshow} isOpen={isOpen} closeHandler={closeHandler}/>
@@ -40,7 +43,7 @@ function Moviecard(props) {
                
             
             <div className="image-container">
-                <img src={eachshow.show.image.medium} alt="" />
+            { eachshow.show.image ?.medium ? (<img src={eachshow.show.image.medium}/>)  : (<div className="">'No image available'</div>)  }
             </div>
            
             <div className="card-info">
