@@ -307,6 +307,7 @@ span {
 @media only screen and (max-width: 600px) {
   *{
     overflow-x: hidden;
+    /* overflow-y:auto; */
   }
   .header-h1{
     font-size: 2.5rem;
@@ -314,5 +315,9 @@ span {
   .modal-box{
     width: 140%;
     height: 40%;
+  }
+
+  .modal-imagewrap{
+    width: 40%;
   }
 }
