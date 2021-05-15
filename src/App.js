@@ -9,6 +9,7 @@ function App() {
   const [usersearch, updateUsersearch] = useState("");
   const [showsData, updateShowsData] = useState();
   const [displayData, updateDisplayData] = useState();
+  const [labelShows, updatelabelShows] = useState('FEATURED SHOWS')
   
 
 
@@ -30,7 +31,7 @@ function App() {
 
   }, [])
 
-
+ 
   const search = (e) => {
     updateUsersearch(e.target.value)
   }
@@ -44,16 +45,30 @@ function App() {
   //   updateShows(shows.filter((show)=> show.show.rating.average > 5.5))
   // }
 
+const ratingLabel = (e) => {
+  selectRating(e)
+  labelprop(e)
+}
+
+const dateLabel = (e) => {
+  selectRating(e)
+  labelprop(e)
+  selectDate(e)
+}
+
+
+
   const selectRating = (e) => {
-    if (e.target.value === 'popular') {
+    if (e.target.value === 'Most Popular') {
       // updateDisplayData(showsData.filter((eachShow)=> eachShow.show.rating.average > 7.5))
       let popularshows = showsData.filter((eachShow) => eachShow.show.rating.average > 7.5);
       updateDisplayData(popularshows);
+      
 
 
 
     }
-    if (e.target.value === 'least') {
+    if (e.target.value === 'Least Popular') {
       // updateDisplayData(showsData.filter((eachShow)=> eachShow.show.rating.average < 6.5))
       let leastshows = showsData.filter((eachShow) => eachShow.show.rating.average < 7.5);
       updateDisplayData(leastshows);
@@ -64,17 +79,21 @@ function App() {
   }
 
   const selectDate = (e) => {
-    if (e.target.value === 'new') {
+    if (e.target.value === 'New Shows') {
       let newshows = showsData.filter((eachShow) => eachShow.show.premiered >= '2020') ;
       updateDisplayData(newshows);
     }
-    if (e.target.value === 'old') {
+    if (e.target.value === 'Old Shows') {
       let oldshows = showsData.filter((eachShow) =>  eachShow.show.premiered < '2020');
       updateDisplayData(oldshows);
 
     }
 
 
+  }
+
+  const labelprop = (e) => {
+    updatelabelShows(e.target.value)
   }
 
 
@@ -138,18 +157,18 @@ function App() {
           }
 
       }}
-      className="featured"><h2>FEATURED SHOWS</h2></motion.div>
+      className="featured"><h2>{labelShows}</h2></motion.div>
       <div className="select-wrap">
-           <select className="selected"onChange={selectRating}>
+           <select className="selected"onChange={ratingLabel}>
         <option disabled selected value="">Check Rating</option>
-        <option value="popular">Most Popular</option>
-        <option value="least">Least Popular</option>
+        <option value="Most Popular">Most Popular</option>
+        <option value="Least Popular">Least Popular</option>
       </select>
 
-      <select className="selected"onChange={selectDate} >
+      <select className="selected" onChange={dateLabel}>
         <option disabled selected value="">Sort by Date</option>
-        <option value="new">New</option>
-        <option value="old">Old</option>
+        <option value="New Shows">New Shows</option>
+        <option value="Old Shows">Old Shows</option>
       </select>
 
       

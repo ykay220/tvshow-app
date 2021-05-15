@@ -3,7 +3,11 @@
   margin: 0;
   padding: 0;
   font-family: "Open Sans", sans-serif;
+  overflow-x:hidden;
+  
 }
+
+
 
 input[type="text"] {
   padding: 10px;
@@ -53,7 +57,7 @@ body {
   /* border: 1px solid white; */
   padding-top: 100px;
 
-  width: 50%;
+border-radius:30%;
   margin: auto;
 }
 
@@ -278,6 +282,10 @@ span {
 @media (min-width: 960px) {
   .movie-container {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .modal-box{
+    width: 80%;
   }
 }
 
